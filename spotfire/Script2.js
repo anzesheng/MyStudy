@@ -3608,6 +3608,7 @@
         return "" + this._wrapped;
     }, "function" == typeof define && define.amd && define("underscore", [], function () { return m; });
 }).call(this);
+
 /*! jQuery UI - v1.9.2 - 2013-01-22
 * http://jqueryui.com
 * Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.position.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js, jquery.ui.accordion.js, jquery.ui.autocomplete.js, jquery.ui.button.js, jquery.ui.datepicker.js, jquery.ui.dialog.js, jquery.ui.menu.js, jquery.ui.progressbar.js, jquery.ui.slider.js, jquery.ui.spinner.js, jquery.ui.tabs.js, jquery.ui.effect.js, jquery.ui.effect-blind.js, jquery.ui.effect-bounce.js, jquery.ui.effect-clip.js, jquery.ui.effect-drop.js, jquery.ui.effect-explode.js, jquery.ui.effect-fade.js, jquery.ui.effect-fold.js, jquery.ui.effect-highlight.js, jquery.ui.effect-pulsate.js, jquery.ui.effect-scale.js, jquery.ui.effect-shake.js, jquery.ui.effect-slide.js, jquery.ui.effect-transfer.js
@@ -5641,7 +5642,7 @@
                 r.attr("aria-haspopup", "true").prepend(i), t.attr("aria-labelledby", r.attr("id"));
             }), t = r.add(this.element), t.children(":not(.ui-menu-item):has(a)").addClass("ui-menu-item").attr("role", "presentation").children("a").uniqueId().addClass("ui-corner-all").attr({ tabIndex: -1, role: this._itemRole() }), t.children(":not(.ui-menu-item)").each(function () {
                 var t = e(this);
-                /[^\-—–\s]/.test(t.text()) || t.addClass("ui-widget-content ui-menu-divider");
+                /[^\-ï¿½ï¿½\s]/.test(t.text()) || t.addClass("ui-widget-content ui-menu-divider");
             }), t.children(".ui-state-disabled").attr("aria-disabled", "true"), this.active && !e.contains(this.element[0], this.active[0]) && this.blur();
         }, _itemRole: function () { return { menu: "menuitem", listbox: "option" }[this.options.role]; }, focus: function (e, t) {
             var n, r;
@@ -36290,7 +36291,7 @@ function (module, exports) {
             this.initContainer(container); if (!this.options.skipDefaultHandlers) { this.initHandlers(); } this.initControls();
             this.initPosition(); this.resetView(this.center, this.zoom);
         }; Map.prototype = {
-            options: { zoom: 5, minZoom: 1, maxZoom: 18, maxExtent: null, center: new T.LatLng(46, 2), crs: new T.Crs({ code: "EPSG:3857" }), repeatX: true, repeatY: false, urlLocation: false, noHistory: true, geolocate: false, controls: { attribution: { prefix: "<a target='_blank' href='http://www.tibco.com/assets/blt59b361e6644c8d3a/tibco-end-user-license-agreement_tcm8-9378.pdf'>©TIBCO GeoAnalytics</a>" } } }, initContainer: function (container) {
+            options: { zoom: 5, minZoom: 1, maxZoom: 18, maxExtent: null, center: new T.LatLng(46, 2), crs: new T.Crs({ code: "EPSG:3857" }), repeatX: true, repeatY: false, urlLocation: false, noHistory: true, geolocate: false, controls: { attribution: { prefix: "<a target='_blank' href='http://www.tibco.com/assets/blt59b361e6644c8d3a/tibco-end-user-license-agreement_tcm8-9378.pdf'>ï¿½TIBCO GeoAnalytics</a>" } } }, initContainer: function (container) {
                 this.$container = container;
                 this.$container.map = this; this.$container.style.overflow = "hidden"; this.$container.style.position = "relative";
                 T.DomUtil.addClass(this.$container, "tibco-map"); var layers = this.$container.layers = T.DomUtil.create("div", "layers-container", this.$container, "layers-container");
@@ -37470,7 +37471,7 @@ function (module, exports) {
             this.mapTypeService = null; this.mapTypeServiceData = null; this.options = T.Util.defaults(this.options, base.prototype.options);
             T.TileLayer.call(this, "", options); this.init(options);
         }; TibcoLayer.prototype = {
-            options: { draggable: true, mapType: T.MapTypes.STANDARD, mapStyle: T.MapStyles.LIGHT, attribution: { prefix: "<a target='_blank' href='http://www.tibco.com/assets/blt59b361e6644c8d3a/tibco-end-user-license-agreement_tcm8-9378.pdf'>©TIBCO GeoAnalytics</a>", text: "" } }, init: function () {
+            options: { draggable: true, mapType: T.MapTypes.STANDARD, mapStyle: T.MapStyles.LIGHT, attribution: { prefix: "<a target='_blank' href='http://www.tibco.com/assets/blt59b361e6644c8d3a/tibco-end-user-license-agreement_tcm8-9378.pdf'>ï¿½TIBCO GeoAnalytics</a>", text: "" } }, init: function () {
                 var self = this;
                 this.makeRequest(this.mapServicesUrl).then(function (data) {
                     self.mapServices = self.getMapServices(data);
