@@ -15,6 +15,9 @@ spa.shell = (function () {
     // Begin module scope variables
     var
         configMap = {
+            anchor_schema_map: {
+                chat: { open: true, closed: true }
+            },
             main_html: String()
             + '<div class="spa-shell-head">'
             + '    <div class="spa-shell-head-logo"></div>'
@@ -37,13 +40,27 @@ spa.shell = (function () {
         },
         stateMap = {
             $container: null,
+            anchor_map: {},
             is_chart_retracted: true
         },
+
+        // DOM elements cache
         jqueryMap = {},
-        setJqueryMap, toggleChat, iniModule;
+        
+        // all functions
+        copyAnchorMap,
+        setJqueryMap,
+        toggleChat,
+        changeAnchorPart,
+        onHaschange,
+        onClickChat,
+        iniModule;
     // End module scope variables
 
     // Begin utility methods
+    copyAnchorMap = function() {
+        return $.extend(true, {}, stateMap.anchor_map);
+    };
     // End utility methods
 
     // Begin DOM methods
@@ -94,7 +111,14 @@ spa.shell = (function () {
 
     // Begin event handlers
     onClickChat = function (event) {
-        toggleChat(stateMap.is_chart_retracted);
+        // toggleChat(stateMap.is_chart_retracted);
+
+        if (toggleChat(stateMap.is_chart_retracted)) {
+            $.uriAnchor.setAnchor({
+                chat: (stateMap.is_chart_retracted ? 'open' : 'closed')
+            });
+        }
+
         return false;
     };
     // End event handlers
@@ -118,4 +142,4 @@ spa.shell = (function () {
     // End public methods
 
     return { initModule: initModule };
-}());
+} ());
