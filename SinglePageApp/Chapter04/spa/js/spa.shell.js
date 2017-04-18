@@ -12,7 +12,7 @@ white:true
 /*global $, spa */
 
 spa.shell = (function () {
-    // Begin module scope variables
+    // Begin module scope variables (Model)
     var
         configMap = {
             anchor_schema_map: {
@@ -64,7 +64,7 @@ spa.shell = (function () {
     };
     // End utility methods
 
-    // Begin DOM methods
+    // Begin DOM methods (View)
 
     changeAnchorPart = function (arg_map) {
         var
@@ -150,7 +150,7 @@ spa.shell = (function () {
     };
     // End DOM methods
 
-    // Begin event handlers
+    // Begin event handlers (Controller)
 
     onHashchange = function (event) {
         var
@@ -228,6 +228,10 @@ spa.shell = (function () {
         $.uriAnchor.configModule({
             schema_map: configMap.anchor_schema_map
         });
+
+        // configure and initialize feature modules
+        spa.chat.configModule({});
+        spa.chat.initModule(jqueryMap.$chat)
 
         $(window)
             .bind('hashchange', onHashchange)
